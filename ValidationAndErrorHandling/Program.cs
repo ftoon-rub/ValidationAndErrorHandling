@@ -19,5 +19,9 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/", async context =>
+{
+    await context.Response.WriteAsync("Welcome the api is up and running!");
+});
 
 app.Run();
